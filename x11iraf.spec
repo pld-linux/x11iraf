@@ -6,6 +6,7 @@ Release:	0.1
 License:	?
 Group:		X11/Applications
 Source0:	ftp://iraf.noao.edu/iraf/x11iraf/%{name}-v%{version}-src.tar.gz
+# Source0-md5:	77870465d792b0a3a61c34e6bc077224
 Patch0:		%{name}-errno.patch
 Patch1:		%{name}-system-libs.patch
 Patch2:		%{name}-noism.patch
