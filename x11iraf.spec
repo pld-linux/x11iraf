@@ -15,7 +15,7 @@ BuildRequires:	XFree86-devel
 BuildRequires:	Xaw3d-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		addir	/usr/X11R6/lib/X11/app-defaults
+%define		_appdefsdir	/usr/X11R6/lib/X11/app-defaults
 
 %description
 X11IRAF - X11/GUI development utilities and applications developed by
@@ -44,11 +44,11 @@ xmkmf -a
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{addir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_appdefsdir}}
 
 install bin.linux/[!r]* $RPM_BUILD_ROOT%{_bindir}
 install man/[!r]* $RPM_BUILD_ROOT%{_mandir}/man1
-install app-defaults/* $RPM_BUILD_ROOT%{addir}
+install app-defaults/* $RPM_BUILD_ROOT%{_appdefsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -58,4 +58,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc README Notes-V1.3 Revisions doc/*.ps
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-%{addir}/*
+%{_appdefsdir}/*
