@@ -1,0 +1,59 @@
+--- x11iraf-1.3.1/Imakefile.orig	Sat Jul 13 01:38:01 2002
++++ x11iraf-1.3.1/Imakefile	Thu Mar 20 12:08:39 2003
+@@ -11,7 +11,7 @@
+ 
+ RELEASE		= v1.3.1
+ 
+-LIBDIRS 	= obm xaw3d xpm cdl
++LIBDIRS 	= obm  cdl
+ APPDIRS 	= xgterm ximtool xtapemon obmsh vximtool
+ SUBDIRS 	= $(LIBDIRS) $(APPDIRS)
+ 
+--- x11iraf-1.3.1/obm/ObmW/Converters.h.orig	Thu Mar  6 04:55:18 1997
++++ x11iraf-1.3.1/obm/ObmW/Converters.h	Thu Mar 20 12:12:41 2003
+@@ -25,7 +25,7 @@
+ 
+ #ifndef NO_XPM
+ 
+-#include <xpm.h>
++#include <X11/xpm.h>
+ 
+ /* The |Icon| type is a convenient combination of a pixmap, a mask and
+ the pixmaps's attributes. Not all attributes are stored, only width
+--- x11iraf-1.3.1/obm/ObmW/iconutil.c.orig	Thu Mar  2 20:49:20 2000
++++ x11iraf-1.3.1/obm/ObmW/iconutil.c	Thu Mar 20 12:15:57 2003
+@@ -123,7 +123,7 @@
+     Cardinal one = 1;
+     int status;
+ 
+-    status = XpmReadFileToXpmImage (file, image, NULL, NULL);
++    status = XpmReadFileToXpmImage (file, image, NULL);
+ 
+     switch (status) {
+     case XpmOpenFailed:
+--- x11iraf-1.3.1/obm/server.c.orig	Wed Jul 10 01:56:37 2002
++++ x11iraf-1.3.1/obm/server.c	Thu Mar 20 12:18:32 2003
+@@ -1758,7 +1758,7 @@
+ 
+ 	/* Create the pixmap (actually icon).
+ 	 */
+-	status = XpmCreateXpmImageFromBuffer (description, &image, NULL, NULL);
++	status = XpmCreateXpmImageFromBuffer (description, &image, NULL);
+ 	if (status != XpmSuccess)
+ 	    return (TCL_ERROR);
+ 	XpmCreateDataFromXpmImage (&data, &image, NULL);
+--- x11iraf-1.3.1/X11IRAF.tmpl.orig	Fri Jul 12 20:07:21 2002
++++ x11iraf-1.3.1/X11IRAF.tmpl	Thu Mar 20 12:24:00 2003
+@@ -110,10 +110,10 @@
+ #define DepLibObm 	$(OBMDIR)/libobm.a
+ #endif
+ #ifndef DepLibXpm
+-#define DepLibXpm 	$(XPMDIR)/libXpm.a
++#define DepLibXpm 
+ #endif
+ #ifndef DepLibXaw3d
+-#define DepLibXaw3d 	$(XAW3DDIR)/libXaw3d.a
++#define DepLibXaw3d 
+ #endif
+ #ifndef DepLibCDL
+ #define DepLibCDL 	$(CDLDIR)/libcdl.a
