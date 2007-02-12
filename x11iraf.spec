@@ -1,5 +1,5 @@
 Summary:	X11IRAF - utilities and applications developed by the IRAF project
-Summary(pl):	X11IRAF - narzêdzia i aplikacje stworzone w ramach projektu IRAF
+Summary(pl.UTF-8):   X11IRAF - narzÄ™dzia i aplikacje stworzone w ramach projektu IRAF
 Name:		x11iraf
 Version:	1.3.1
 Release:	0.1
@@ -21,8 +21,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 X11IRAF - X11/GUI development utilities and applications developed by
 the IRAF Project, National Optical Astronomy Observatories.
 
-%description -l pl
-X11IRAF to narzêdzia programistyczne i aplikacje X11/GUI stworzone w
+%description -l pl.UTF-8
+X11IRAF to narzÄ™dzia programistyczne i aplikacje X11/GUI stworzone w
 ramach projektu IRAF w obserwatoriach National Optical Astronomy.
 
 %prep
