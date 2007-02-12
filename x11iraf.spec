@@ -1,5 +1,5 @@
 Summary:	X11IRAF - utilities and applications developed by the IRAF project
-Summary(pl.UTF-8):   X11IRAF - narzędzia i aplikacje stworzone w ramach projektu IRAF
+Summary(pl.UTF-8):	X11IRAF - narzędzia i aplikacje stworzone w ramach projektu IRAF
 Name:		x11iraf
 Version:	1.3.1
 Release:	0.1
